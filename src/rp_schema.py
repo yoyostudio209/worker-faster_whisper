@@ -104,4 +104,9 @@ INPUT_VALIDATIONS = {
         'required': False,
         'default': False
     },
+    'batch_size': {
+        'type': int,
+        'required': False,
+        'default': 8
+    },
 }
