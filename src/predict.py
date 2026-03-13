@@ -64,7 +64,7 @@ class Predictor:
         compression_ratio_threshold=2.4,
         logprob_threshold=-1.0,
         no_speech_threshold=0.6,
-        enable_vad=False,
+        enable_vad=True,
         word_timestamps=False,
         batch_size=8,
     ):
