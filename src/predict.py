@@ -239,7 +239,8 @@ class Predictor:
 
 def _get_hf_token() -> Optional[str]:
     return (
-        os.getenv("HF_TOKEN")
+        os.getenv("hf_token")
+        or os.getenv("HF_TOKEN")
         or os.getenv("HUGGINGFACE_TOKEN")
         or os.getenv("HUGGINGFACE_HUB_TOKEN")
     )
