@@ -1,6 +1,6 @@
-![Faster Whisper Logo](https://5ccaof7hvfzuzf4p.public.blob.vercel-storage.com/banner-pjbGKw0buxbWGhMVC165Gf9qgqWo7I.jpeg)
+![Whisper Worker Logo](https://5ccaof7hvfzuzf4p.public.blob.vercel-storage.com/banner-pjbGKw0buxbWGhMVC165Gf9qgqWo7I.jpeg)
 
-[Faster Whisper](https://github.com/guillaumekln/faster-whisper) is designed to process audio files using various Whisper models, with options for transcription formatting, language translation and more.
+[WhisperX](https://github.com/m-bain/whisperX) is used to process audio files with Whisper models, optional speaker diarization, and formatted transcription output.
 
 ---
 
@@ -46,6 +46,7 @@
 | `no_speech_threshold`               | float | If the probability of the token is higher than this value, consider the segment as silence. Default: 0.6                                                               |
 | `enable_vad`                        | bool  | If True, use the voice activity detection (VAD) to filter out parts of the audio without speech. This step is using the Silero VAD model. Default: False               |
 | `word_timestamps`                   | bool  | If True, include word timestamps in the output. Default: False                                                                                                         |
+| `speaker_id`                        | bool  | If True, run speaker diarization and attach `speaker` labels to returned segments. Default: False                                                                      |
 
 ### Example
 
@@ -67,15 +68,9 @@ producing an output like this:
   "segments": [
     {
       "id": 1,
-      "seek": 106,
       "start": 0.11,
       "end": 3.11,
-      "text": " Hello and welcome!",
-      "tokens": [50364, 25, 7, 287, 50514],
-      "temperature": 0.1,
-      "avg_logprob": -0.8348079785480325,
-      "compression_ratio": 0.5789473684210527,
-      "no_speech_prob": 0.1453857421875
+      "text": " Hello and welcome!"
     }
   ],
   "detected_language": "en",

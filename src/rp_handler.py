@@ -97,6 +97,7 @@ def run_whisper_job(job):
                 no_speech_threshold=job_input["no_speech_threshold"],
                 enable_vad=job_input["enable_vad"],
                 word_timestamps=job_input["word_timestamps"],
+                speaker_id=job_input["speaker_id"],
                 batch_size=job_input["batch_size"],
             )
 

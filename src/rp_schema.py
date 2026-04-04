@@ -104,6 +104,11 @@ INPUT_VALIDATIONS = {
         'required': False,
         'default': False
     },
+    'speaker_id': {
+        'type': bool,
+        'required': False,
+        'default': False
+    },
     'batch_size': {
         'type': int,
         'required': False,

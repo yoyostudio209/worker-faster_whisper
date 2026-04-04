@@ -1,5 +1,3 @@
-# faster-whisper turbo needs cudnnn >= 9
-# see https://github.com/runpod-workers/worker-faster_whisper/pull/44
 FROM nvidia/cuda:12.3.2-cudnn9-runtime-ubuntu22.04
 
 # Remove any third-party apt sources to avoid issues with expiring keys.
@@ -35,13 +33,9 @@ RUN apt-get update -y && \
 COPY builder/requirements.txt /requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --upgrade pip && \
+    pip install --index-url https://download.pytorch.org/whl/cu128 torch~=2.8.0 torchaudio~=2.8.0 torchvision~=0.23.0 && \
     pip install huggingface_hub[hf_xet] && \
     pip install -r /requirements.txt --no-cache-dir
-
-# Copy and run script to fetch models
-COPY builder/fetch_models.py /fetch_models.py
-RUN python /fetch_models.py && \
-    rm /fetch_models.py
 
 # Copy handler and other code
 COPY src .

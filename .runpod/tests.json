@@ -12,6 +12,7 @@
         "beam_size": 5,
         "suppress_tokens": "-1",
         "condition_on_previous_text": false,
+        "speaker_id": false,
         "temperature_increment_on_fallback": 0.2,
         "compression_ratio_threshold": 2.4,
         "logprob_threshold": -1,
