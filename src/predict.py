@@ -297,6 +297,7 @@ def serialize_segments(transcript: list[dict[str, Any]]) -> list[dict[str, Any]]
 
 def format_segments(format_type: str, segments: list[dict[str, Any]]) -> str:
     """Format segments to the desired output type."""
+    format_type = format_type.strip().replace(" ", "_")
     if format_type == "plain_text":
         return " ".join(segment.get("text", "").lstrip() for segment in segments).strip()
     if format_type == "formatted_text":
